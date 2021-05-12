@@ -1,11 +1,12 @@
-(ns app.core)
+(ns app.core
+  (:require [clojure.string :as s]))
 
 (defn main []
   (let [c (.. js/document (createElement "DIV"))]
     (str
-     (clojure.string/replace nil "" "")
-     (clojure.string/replace "foo" "f" "b")
-     (clojure.string/replace "bar" "b" "f"))
+     (s/replace nil "" "")
+     (s/replace "foo" "f" "b")
+     (s/replace "bar" "b" "f"))
 
     (aset c "innerHTML" "<p>i'm dynamically created</p>")
     (.. js/document (getElementById "container") (appendChild c))))
