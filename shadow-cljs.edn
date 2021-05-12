@@ -1,0 +1,11 @@
+;; shadow-cljs configuration
+{:source-paths ["src"]
+ :builds       {:main {:target           :browser
+                       :modules          {:main {:init-fn app.core/main
+                                                 :entries [app.core]}}
+                       :output-dir       "html-shadow/generated"
+                       :asset-path       "/generated"
+                       :devtools         {:http-root "html-shadow"
+                                          :http-port 8091}
+                       :compiler-options {}}}}
+
